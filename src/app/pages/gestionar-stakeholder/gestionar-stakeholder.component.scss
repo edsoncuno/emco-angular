@@ -1,0 +1,32 @@
+.title {
+    width: 100%;
+    text-align: center;
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 2rem 0rem;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .sub-container {
+        overflow-x: auto;
+        width: 90%;
+    }
+}
+
+.fade-in-out {
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+.fade-in-out.ng-enter {
+    opacity: 1;
+}
+
+.fade-in-out.ng-leave {
+    opacity: 0;
+}

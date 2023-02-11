@@ -1,0 +1,36 @@
+<div class="title">Gestionar Stakeholder</div>
+<div class="container">
+    <div class="sub-container" *ngIf="loading">
+        LOADING FLIGHTS, PLEASE WAIT
+    </div>
+    <div class="sub-container">
+        <button pButton pRipple type="button" label="Agregar" class="p-button-rounded"
+            (click)="showNewStakeholder()"></button>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>DNI</th>
+                    <th>RUC</th>
+                    <th>Tipo</th>
+                    <th>Actualizar</th>
+                    <th>Eliminar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let stakeholder of stakeholders">
+                    <td><input type="text" pInputText [(ngModel)]='stakeholder.name'></td>
+                    <td><input type="text" pInputText [(ngModel)]='stakeholder.dni'></td>
+                    <td><input type="text" pInputText [(ngModel)]='stakeholder.ruc'></td>
+                    <td><input type="text" pInputText [(ngModel)]='stakeholder.type'></td>
+                    <td><button pButton pRipple type="button" label="Actualizar" class="p-button-rounded"></button></td>
+                    <td><button pButton pRipple type="button" label="Eliminar"
+                            class="p-button-rounded p-button-danger"></button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div *ngIf="showingNewStakeholder" [ngClass]="{'fade-in-out': showingNewStakeholder}">
+    NEW STAKEHOLDER
+</div>
